@@ -1,4 +1,4 @@
-package resources.helper;
+package demoQA.helper;
 
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -20,6 +20,10 @@ public class configHelper {
     public static String getUrl() {
         String url = properties.getProperty("url");
 
+        return url;
+    }
+    public static String getUrlForAddListOfBooks() {
+        String url = properties.getProperty("addListOfBooksUrl");
         return url;
     }
 }
