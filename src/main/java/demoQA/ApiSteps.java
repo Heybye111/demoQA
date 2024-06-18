@@ -12,22 +12,22 @@ public class ApiSteps {
 
     String url = configHelper.getUrlForAddListOfBooks();
 
-    public void addBook() {
-        given()
-                .body("""
-                        """)
-                .contentType(ContentType.JSON)
-                .when()
-                .post(url)
-                .then()
-                .log().all()
-                .statusCode(200)
-
-
-
-
-
-    }
+//    public void addBook() {
+//        given()
+//                .body("""
+//                        """)
+//                .contentType(ContentType.JSON)
+//                .when()
+//                .post(url)
+//                .then()
+//                .log().all()
+//                .statusCode(200)
+//
+//
+//
+//
+//
+//    }
 
 
 
