@@ -1,5 +1,7 @@
 package ru.inno.certification3;
 
+import demoQA.ApiSteps;
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -16,6 +18,8 @@ public class TestDemoQa {
 
     LoginPage loginPage = new LoginPage();
     MainPage mainPage = new MainPage();
+    ApiSteps apiSteps = new ApiSteps();
+
 
     @BeforeAll
     public static void setUp(){
@@ -25,17 +29,21 @@ public class TestDemoQa {
 
     @BeforeEach
     public void auth(){
+        String userId = apiSteps.createUser();
         String url = configHelper.getUrl();
-        open(url);
+        open(url + "/login");
         loginPage.enterUsername();
         loginPage.enterPassword();
         loginPage.enterLoginButton();
     }
+    @AfterEach
+    public void tearDown(){
+        apiSteps.deleteUser(userId);
+    }
 
 
     @Test
-    public void checkEmptyTable() throws InterruptedException {
-        loginPage.enterLoginButton();
+    public void checkEmptyTable()  {
         mainPage.checkEmptyLines();
     }
 

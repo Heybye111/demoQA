@@ -1,14 +1,18 @@
 package ru.inno.certification3.Pages;
+import demoQA.helper.configHelper;
 import static com.codeborne.selenide.Selenide.$;
 
 public class LoginPage {
 
+    String login = configHelper.getLogin();
+    String password = configHelper.getPassword();
+
     public void enterPassword(){
-        $("#password").sendKeys("GGwp12345678!");
+        $("#password").sendKeys(password);
     }
 
     public void enterUsername(){
-        $("#userName").sendKeys("Heybye");
+        $("#userName").sendKeys(login);
     }
 
     public void enterLoginButton(){
