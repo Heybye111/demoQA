@@ -1,3 +1,5 @@
+package ru.inno.certification3;
+
 import org.junit.jupiter.api.Test;
 import demoQA.helper.configHelper;
 
@@ -5,7 +7,7 @@ import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 
-public class MainTest {
+public class TestDemoQa {
 
 
     @Test
