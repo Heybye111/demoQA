@@ -47,17 +47,6 @@ public class ApiSteps {
     }
 
     public void addBook(AddListOfBooks addListOfBooks) {
-//        String body = "{\n" +
-//                "  \"userId\": \"" + userId + "\",\n" +
-//                "  \"collectionOfIsbns\": [\n" +
-//                "    {\n" +
-//                "      \"isbn\": \"" + isbn + "\"\n" +
-//                "    }\n" +
-//                "  ]\n" +
-//                "}";
-
-//        AddListOfBooks addListOfBooks = new AddListOfBooks(userId, ListOfBooks);
-
         given().log().all()
                 .auth()
                 .preemptive()

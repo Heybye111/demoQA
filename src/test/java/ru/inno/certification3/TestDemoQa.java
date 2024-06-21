@@ -1,6 +1,5 @@
 package ru.inno.certification3;
 
-import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import demoQA.ApiSteps;
 import demoQA.POJO.AddListOfBooks;
@@ -13,7 +12,6 @@ import ru.inno.certification3.Pages.MainPage;
 
 import java.io.IOException;
 import java.nio.file.Files;
-import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.*;
 
@@ -32,7 +30,7 @@ public class TestDemoQa {
     ObjectMapper mapper = new ObjectMapper();
 
     @BeforeEach
-    public void auth() {
+    public void setUp() {
         userId = apiSteps.createUser();
         open(url + "/login");
     }
@@ -70,15 +68,12 @@ public class TestDemoQa {
 
     @Test
     public void test1() throws InterruptedException, IOException {
-        AddListOfBooks addListOfBooks = new AddListOfBooks(userId, createListOfBooks(List.of("9781449365035", "9781491904244")));
 
+        String str = new String(Files.readAllBytes(Paths.get("src/test/resources/addSixBooks.json")));
+        str = str.replace("##userId##", userId);
+        AddListOfBooks listOfBooksToAdd = mapper.readValue(str, AddListOfBooks.class);
 
-//        String str = new String(Files.readAllBytes(Paths.get("src/test/resources/addSixBooks.json")));
-//        str = str.replace("##userId##", userId);
-//        AddListOfBooks list = mapper.readValue(str, AddListOfBooks.class);
-
-
-        apiSteps.addBook(addListOfBooks);
+        apiSteps.addBook(listOfBooksToAdd);
         loginPage.auth();
         Thread.sleep(2000);
 
