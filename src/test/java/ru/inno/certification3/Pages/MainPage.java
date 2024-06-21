@@ -2,6 +2,7 @@ package ru.inno.certification3.Pages;
 
 import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
+import org.openqa.selenium.By;
 
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.*;
@@ -31,8 +32,11 @@ public class MainPage {
         return booksCount;
     }
 
-    public void deleteAllBooks() {
-        $("#submit").click();
+    public void deleteAllBooks() throws InterruptedException {
+        Thread.sleep(5000);
+        //$(By.xpath("//button[text()='Delete All Books']"));
+        $(".di > button");
+        Thread.sleep(10000);
         $("#closeSmallModal-ok").click();
         confirm();
     }
