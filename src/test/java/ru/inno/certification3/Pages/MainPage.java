@@ -2,7 +2,6 @@ package ru.inno.certification3.Pages;
 
 import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
-import org.openqa.selenium.By;
 
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.*;
@@ -20,11 +19,8 @@ public class MainPage {
 
     public int countOfBooksInTable() {
         ElementsCollection rows = $$("div.rt-tr-group");
-
         int booksCount = 0;
-
         for (SelenideElement row : rows) {
-
             if (!row.$$("div.rt-td img").isEmpty()) {
                 booksCount++;
             }

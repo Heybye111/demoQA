@@ -1,10 +1,8 @@
 package demoQA.helper.Api;
 
-
 import demoQA.helper.Pojo.AddListOfBooks;
 import demoQA.helper.configHelper;
 import io.restassured.http.ContentType;
-
 
 import static io.restassured.RestAssured.given;
 
@@ -55,13 +53,4 @@ public class ApiSteps {
                 .statusCode(201);
 
     }
-
-//    static public List<Map<String, String>> createListOfBooks(List<String> isbns) {
-//        List<Map<String, String>> ListOfBooks = new ArrayList<>();
-//        for (String isbn : isbns) {
-//            ListOfBooks.add(Map.of("isbn", isbn));
-//        }
-//        return ListOfBooks;
-//    }
-
 }

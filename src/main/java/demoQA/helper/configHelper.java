@@ -19,7 +19,6 @@ public class configHelper {
 
     public static String getUrl() {
         String url = properties.getProperty("baseUrl");
-
         return url;
     }
     public static String getUrlForAddListOfBooks() {
@@ -29,18 +28,15 @@ public class configHelper {
 
     public static String getBook() {
         String firstBook = properties.getProperty("firstBook");
-
         return firstBook;
     }
 
     public static String getLogin() {
         String login = properties.getProperty("login");
-
         return login;
     }
     public static String getPassword() {
         String password = properties.getProperty("password");
-
         return password;
     }
 }

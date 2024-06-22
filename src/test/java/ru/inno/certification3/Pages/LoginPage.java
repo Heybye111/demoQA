@@ -26,6 +26,4 @@ public class LoginPage {
         enterPassword();
         enterLoginButton();
     }
-
-
 }
