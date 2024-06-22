@@ -21,6 +21,7 @@ import java.nio.file.Paths;
 import static com.codeborne.selenide.Selenide.*;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+@DisplayName("Тесты на DemoQa")
 public class TestDemoQa {
 
     LoginPage loginPage = new LoginPage();
