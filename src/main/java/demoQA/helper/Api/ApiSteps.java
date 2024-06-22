@@ -2,6 +2,7 @@ package demoQA.helper.Api;
 
 import demoQA.helper.Pojo.AddListOfBooks;
 import demoQA.helper.configHelper;
+import io.qameta.allure.Step;
 import io.restassured.http.ContentType;
 
 import static io.restassured.RestAssured.given;
@@ -10,6 +11,7 @@ public class ApiSteps {
 
     String url = configHelper.getUrl();
 
+    @Step("Создать пользака")
     public String createUser() {
         String body = "{\"userName\": \"" + configHelper.getLogin() + "\",\"password\": \"" + configHelper.getPassword() + "\"}";
         String userId = given()
@@ -25,6 +27,7 @@ public class ApiSteps {
         return userId;
     }
 
+    @Step("Удалить пользака")
     public void deleteUser(String userId) {
         given()
                 .auth()
@@ -39,6 +42,7 @@ public class ApiSteps {
                 .statusCode(204);
     }
 
+    @Step("Добавить книги в таблицу пользаку")
     public void addBook(AddListOfBooks addListOfBooks) {
         given().log().all()
                 .auth()
