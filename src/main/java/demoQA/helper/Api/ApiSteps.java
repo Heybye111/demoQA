@@ -1,15 +1,10 @@
-package demoQA;
+package demoQA.helper.Api;
 
-import demoQA.POJO.AddListOfBooks;
+
+import demoQA.helper.Pojo.AddListOfBooks;
 import demoQA.helper.configHelper;
-import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
-import io.restassured.mapper.ObjectMapper;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 
 import static io.restassured.RestAssured.given;
 
@@ -61,12 +56,12 @@ public class ApiSteps {
 
     }
 
-    static public List<Map<String, String>> createListOfBooks(List<String> isbns) {
-        List<Map<String, String>> ListOfBooks = new ArrayList<>();
-        for (String isbn : isbns) {
-            ListOfBooks.add(Map.of("isbn", isbn));
-        }
-        return ListOfBooks;
-    }
+//    static public List<Map<String, String>> createListOfBooks(List<String> isbns) {
+//        List<Map<String, String>> ListOfBooks = new ArrayList<>();
+//        for (String isbn : isbns) {
+//            ListOfBooks.add(Map.of("isbn", isbn));
+//        }
+//        return ListOfBooks;
+//    }
 
 }

@@ -1,4 +1,4 @@
-package demoQA.POJO;
+package demoQA.helper.Pojo;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

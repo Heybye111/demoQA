@@ -33,10 +33,8 @@ public class MainPage {
     }
 
     public void deleteAllBooks() throws InterruptedException {
-        Thread.sleep(5000);
         //$(By.xpath("//button[text()='Delete All Books']"));
-        $(".di > button");
-        Thread.sleep(10000);
+        $(".di > button").click();
         $("#closeSmallModal-ok").click();
         confirm();
     }
