@@ -16,7 +16,7 @@ public class MainPage {
 
     @Step("Сделать таблицу на 10 строк")
     public void selectTenRows() {
-        $(byAttribute("aria-label", "rows per page")).$(byValue("20")).click();
+        $(byAttribute("aria-label", "rows per page")).$(byValue("10")).click();
     }
 
     @Step("Посчитать кол-во книг в таблице")
@@ -32,8 +32,7 @@ public class MainPage {
     }
 
     @Step("Удалить все книги из таблицы")
-    public void deleteAllBooks() throws InterruptedException {
-        //$(By.xpath("//button[text()='Delete All Books']"));
+    public void deleteAllBooks() {
         $(".di > button").click();
         $("#closeSmallModal-ok").click();
         confirm();

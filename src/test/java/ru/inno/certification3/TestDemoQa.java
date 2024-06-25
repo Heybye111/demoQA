@@ -78,7 +78,7 @@ public class TestDemoQa {
     @Tag("positive")
     @Severity(SeverityLevel.CRITICAL)
     @Owner("Heybye")
-    public void checkAddAndDeleteBooks() throws IOException, InterruptedException {
+    public void checkAddAndDeleteBooks() throws IOException {
         String books = new String(Files.readAllBytes(Paths.get("src/test/resources/addTwoBooks.json")));
         books = books.replace("##userId##", userId);
         AddListOfBooks listOfBooksToAdd = mapper.readValue(books, AddListOfBooks.class);
